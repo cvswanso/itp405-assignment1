@@ -1,1 +1,1 @@
-[Go visit my heroku app](https://cvswanso-php-review.herokuapp.com/)
+[Go visit my heroku app](https://cvswanso-itp405-assignment1.herokuapp.com/playlists.php)
