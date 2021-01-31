@@ -13,13 +13,15 @@ if (file_exists(__DIR__ . '/.env')) {
 
 $pdo = new PDO($_ENV['PDO_CONNECTION_STRING']);
 
-$sql = "SELECT tracks.name, albums.title AS album, composer, unit_price AS price, 
+$sql = "SELECT tracks.name, artists.name AS artist, albums.title AS album, composer, unit_price AS price, 
 genres.name AS genre
 FROM playlist_track
 INNER JOIN tracks
 ON tracks.id = playlist_track.track_id
 INNER JOIN albums
 ON tracks.album_id = albums.id
+INNER JOIN artists
+ON albums.artist_id = artists.id
 INNER JOIN genres
 ON tracks.genre_id = genres.id  
 WHERE playlist_id = " . $_GET["playlist"] . ";";
